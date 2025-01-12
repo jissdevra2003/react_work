@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+
+<body style="background-color: #323332; color: #fff;">
+<ul class="language">
+<li>Java</li>
+<li>JavaScript</li>
+<li>C++ </li>
+</ul>    
+
+</body>
+<script>
+function addLanguage(languageName)
+{
+const li=document.createElement('li')
+li.appendChild(document.createTextNode(languageName));
+document.querySelector('.language').appendChild(li);
+
+}
+addLanguage("c")
+
+const lastLang=document.querySelector('li:last-child');
+lastLang.remove();
+</script>
+
+</html>

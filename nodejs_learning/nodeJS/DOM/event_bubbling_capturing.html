@@ -1,0 +1,37 @@
+<!-- The capturing alert for the Parent Div will fire first, then the Child
+ Div alert,
+ and finally, the bubbling alert for the Parent Div will fire. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling and Capturing Example</title>
+</head>
+<body>
+    <div id="parentDiv" style="padding: 20px; background-color: lightgrey;">
+        Parent Div
+        <div id="childDiv" style="padding: 20px; background-color: lightcoral;">
+            Child Div
+        </div>
+    </div>
+
+    <script>
+        // Parent with capturing enabled
+        document.getElementById('parentDiv').addEventListener('click', function() {
+            alert('Parent Div clicked during CAPTURING phase!');
+        }, true);
+
+        // Child with bubbling enabled
+        document.getElementById('childDiv').addEventListener('click', function() {
+            alert('Child Div clicked!');
+        });
+
+        // Parent with bubbling enabled
+        document.getElementById('parentDiv').addEventListener('click', function() {
+            alert('Parent Div clicked during BUBBLING phase!');
+        });
+    </script>
+</body>
+</html>

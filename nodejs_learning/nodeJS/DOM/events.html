@@ -1,0 +1,31 @@
+  <!-- event object has the information about the source 
+element which generated the event -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Example</title>
+</head>
+<body>
+
+<button id="myButton">Click Me!</button>
+
+<!-- Script goes here -->
+<script>
+    // Select the button by its ID
+    const button = document.getElementById('myButton');
+    
+    // Add an event listener to the button
+    button.addEventListener('click', function(e) {
+        alert('Button was clicked!');
+console.log(e);  //event object
+    });
+</script>
+
+</body>
+</html>
+
+<!-- other events important 
+timestamp keycode target current toElement currentTarget -->

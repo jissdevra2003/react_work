@@ -1,0 +1,41 @@
+<!-- Event Capturing
+Event capturing is the opposite of event bubbling. It starts from
+ the root and moves down to the target element. 
+To use capturing, you pass true as the third argument to addEventListener -->
+
+<!-- When you click the Child Div, the alert from the Parent Div handler 
+will fire first, then the alert
+ from the Child Div handler will fire. This demonstrates event capturing. -->
+
+
+<!-- ******************capturing -> bde se chota ************************-->
+    <!-- parent to child -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing Example</title>
+</head>
+<body>
+    <div id="parentDiv" style="padding: 20px; background-color: lightgrey;">
+        Parent Div
+        <div id="childDiv" style="padding: 20px; background-color: lightcoral;">
+            Child Div
+        </div>
+    </div>
+
+    <script>
+        // Event listeners that demonstrate event capturing
+        document.getElementById('parentDiv').addEventListener('click', function() {
+            alert('Parent Div clicked!');
+        }, true);
+
+        document.getElementById('childDiv').addEventListener('click', function() {
+            alert('Child Div clicked!');
+        }, true);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- Event bubbling refers to the way an event "bubbles" up from 
+the target element (where the event happened) to its parent elements. -->
+
+
+<!-- When you click the Child Div, the alert from the Child Div handler
+ will fire first, then the alert
+ from the Parent Div handler will fire. This demonstrates event bubbling. -->
+
+
+<!-- **************bubbling - chote se bda **************************** -->
+    <!-- child to parent  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling Example</title>
+</head>
+<body>
+    <div id="parentDiv" style="padding: 20px; background-color: lightgrey;">
+        Parent Div
+        <div id="childDiv" style="padding: 20px; background-color: lightcoral;">
+            Child Div
+        </div>
+    </div>
+
+    <script>
+        // Event listeners that demonstrate event bubbling
+        document.getElementById('parentDiv').addEventListener('click', function() {
+            alert('Parent Div clicked!');
+        },false);
+
+        document.getElementById('childDiv').addEventListener('click', function() {
+            alert('Child Div clicked!');
+        },false);
+    </script>
+</body>
+</html>

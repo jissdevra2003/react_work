@@ -1,0 +1,5 @@
+
+/* @apply to include multiple Tailwind utility classes */
+.row{
+@apply w-full h-screen
+}
