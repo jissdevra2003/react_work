@@ -10,7 +10,6 @@ amountDisable=false,
 currencyDisable=false,
 })   //object de-structured
 {
-
 return (
 <>
 <div className="bg-white p-3 rounded-md text-sm flex m-10">
@@ -26,37 +25,32 @@ value={amount}
 disabled={amountDisable}  
 //event handler
 onChange={(e)=>onAmountChange && onAmountChange(Number(e.target.value))}
-
 />
 </div>
 <div className="w-1/2 flex flex-wrap justify-end text-right">
 <p className="text-black mb-2w-full" >Currency type</p>
-
  {/* to create a drop-down list */}
 <select className="rounded-lg px-1 py-1 bg-white cursor-pointer border-2"
 value={selectCurrency}
+
+//********event handler for drop down list **************/
 onChange={(e)=> onCurrencyChange && onCurrencyChange(e.target.value)} 
 disabled={currencyDisable}
 >   
-{currencyOption.map((currencyValue)=>
-{
+{currencyOption.map((currencyValue)=>{
 return (
-<option key={currencyValue}    //always pass a unique property as key in loops
-value={currencyValue}>
+<option 
+key={currencyValue}  //passed props for option tag
+value={currencyValue}   //prop name-value , propertyValue-currencyValue
+>
 {currencyValue}
 </option>
 )
 })}                            
-
 </select>
-
 </div>
-
 </div>
-
 </>
-
 )
-
 }
 export default InputField;
