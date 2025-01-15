@@ -25,5 +25,6 @@ dist-ssr
 eslint.config.js 
 package-lock.json
 package.json
-vite.config.js 
+vite.config.js
+tailwind.config.js 
 
